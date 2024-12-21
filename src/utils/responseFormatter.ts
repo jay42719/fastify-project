@@ -1,4 +1,4 @@
-export const formatResponse = (data: any) => {
+export const formatResponse = <T>(data: T) => {
   return {
     success: true,
     data,

@@ -10,7 +10,7 @@ export const authMiddleware = async (
     if (!token) throw new Error('Unauthorized');
     const decoded = verifyToken(token);
     req['user'] = decoded;
-  } catch (error) {
+  } catch {
     reply.status(401).send({ message: 'Unauthorized' });
   }
 };
