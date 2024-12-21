@@ -1,7 +1,10 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { verifyToken } from '../utils/jwt';
 
-export const authMiddleware = async (req: FastifyRequest, reply: FastifyReply) => {
+export const authMiddleware = async (
+  req: FastifyRequest,
+  reply: FastifyReply
+) => {
   try {
     const token = req.headers.authorization?.split(' ')[1];
     if (!token) throw new Error('Unauthorized');

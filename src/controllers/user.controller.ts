@@ -1,7 +1,9 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { getAllUsers } from '../services/user.service';
-import { formatResponse, formatErrorResponse } from '../utils/responseFormatter';
-
+import {
+  formatResponse,
+  formatErrorResponse,
+} from '../utils/responseFormatter';
 
 export const getUsersHandler = async (
   _: FastifyRequest,
@@ -11,6 +13,8 @@ export const getUsersHandler = async (
     const users = await getAllUsers();
     return reply.status(200).send(formatResponse(users));
   } catch (error) {
-    return reply.status(500).send(formatErrorResponse(error.message || 'Server Error'));
+    return reply
+      .status(500)
+      .send(formatErrorResponse(error.message || 'Server Error'));
   }
 };
