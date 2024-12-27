@@ -15,7 +15,6 @@ export interface IEnvAppConfig {
 export const EnvAppConfig: IEnvAppConfig = {
   HOST_PORT: Number(process.env.HOST_PORT) || 3000,
   NODE_ENV: (process.env.NODE_ENV as NODE_ENV_ENUM) || NODE_ENV_ENUM.LOCAL,
-  MONGO_URI:
-    process.env.MONGO_URI || `mongodb://localhost:27017/fastify_auth_ts`,
+  MONGO_URI: process.env.MONGO_URI || `mongodb://localhost:27017/fastify_demo`,
   JWT_SECRET: process.env.JWT_SECRET || '1234',
 };
